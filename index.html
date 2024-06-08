@@ -6,8 +6,9 @@
     <script type="text/javascript">
       function LoadPokemon() {
         const input = document.getElementById("SearchBox");
-      var apiUrl = string.concat('https://pokeapi.co/api/v2/pokemon/', input.value);
-    fetch(apiUrl).then(response => {
+      var apiUrl = 'https://pokeapi.co/api/v2/pokemon/';
+        var pokeUrl = apiUrl.concat(input.value);
+    fetch(pokeUrl).then(response => {
       return response.json();
     }).then(data => {
       let forms = data.forms
