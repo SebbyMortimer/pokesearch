@@ -7,5 +7,16 @@
 
   <body>
     <p>Welcome to PokeSearch!</p>
+    <script type="text/javascript">
+      var apiUrl = 'https://pokeapi.co/api/v2/pokemon/ditto/';
+    fetch(apiUrl).then(response => {
+      return response.json();
+    }).then(data => {
+      let forms = data.forms
+      console.log(data);
+    }).catch(err => {
+      // Do something for an error here
+    });
+    </script>
   </body>
 </html>
