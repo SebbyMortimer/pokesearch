@@ -3,14 +3,6 @@
 <html>
   <head>
     <title>PokeSearch</title>
-  </head>
-
-  <body>
-    <p>Welcome to PokeSearch!</p>
-    <img src="IMG_0081.jpeg" alt="Default penguin image">
-    <label for="SearchBox">What Pokemon would you like to search for?</label>
-    <input type="text" id="SearchBox" name="SearchBox">
-    <button type="button">Search</button>
     <script type="text/javascript">
       function LoadPokemon() {
         const input = document.getElementById("SearchBox");
@@ -25,5 +17,13 @@
     });
       }
     </script>
+  </head>
+
+  <body>
+    <p>Welcome to PokeSearch!</p>
+    <img src="IMG_0081.jpeg" alt="Default penguin image">
+    <label for="SearchBox">What Pokemon would you like to search for?</label>
+    <input type="text" id="SearchBox" name="SearchBox">
+    <button type="button" onclick="LoadPokemon()">Search</button>
   </body>
 </html>
