@@ -12,7 +12,9 @@
     <input type="text" id="SearchBox" name="SearchBox">
     <button type="button">Search</button>
     <script type="text/javascript">
-      var apiUrl = 'https://pokeapi.co/api/v2/pokemon/ditto/';
+      function LoadPokemon() {
+        const input = document.getElementById("SearchBox");
+      var apiUrl = string.concat('https://pokeapi.co/api/v2/pokemon/', input.value);
     fetch(apiUrl).then(response => {
       return response.json();
     }).then(data => {
@@ -21,6 +23,7 @@
     }).catch(err => {
       // Do something for an error here
     });
+      }
     </script>
   </body>
 </html>
