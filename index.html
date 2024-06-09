@@ -5,13 +5,15 @@
     <title>PokeSearch</title>
     <script type="text/javascript">
       function LoadPokemon() {
-        const input = document.getElementById("SearchBox");
+        const searchBox = document.getElementById("SearchBox");
+        const image = document.getElementById("PokemonImage");
       var apiUrl = 'https://pokeapi.co/api/v2/pokemon/';
-        var pokeUrl = apiUrl.concat(input.value);
+        var pokeUrl = apiUrl.concat(searchBox.value);
     fetch(pokeUrl).then(response => {
       return response.json();
     }).then(data => {
-      let forms = data.forms
+      let sprite = data.sprites.other["official-artwork"]["front-default"];
+      image.src = sprite;
       console.log(data);
     }).catch(err => {
       // Do something for an error here
@@ -22,7 +24,7 @@
 
   <body>
     <p>Welcome to PokeSearch!</p>
-    <img src="IMG_0081.jpeg" alt="Default penguin image">
+    <img src="IMG_0081.jpeg" alt="Default penguin image" id="PokemonImage">
     <label for="SearchBox">What Pokemon would you like to search for?</label>
     <input type="text" id="SearchBox" name="SearchBox">
     <button type="button" onclick="LoadPokemon()">Search</button>
