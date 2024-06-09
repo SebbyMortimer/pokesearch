@@ -7,18 +7,16 @@
       function LoadPokemon() {
         const searchBox = document.getElementById("SearchBox");
         const image = document.getElementById("PokemonImage");
-      var apiUrl = 'https://pokeapi.co/api/v2/pokemon/';
+        var apiUrl = 'https://pokeapi.co/api/v2/pokemon/';
         var pokeUrl = apiUrl.concat(searchBox.value);
-    fetch(pokeUrl).then(response => {
-      return response.json();
-    }).then(data => {
-      let sprite = data.sprites.other["official-artwork"]["front_default"];
-      console.log(sprite);
-      image.src = sprite;
-      console.log(data);
-    }).catch(err => {
-      // Do something for an error here
-    });
+        fetch(pokeUrl).then(response => {
+          return response.json();
+        }).then(data => {
+          let sprite = data.sprites.other["official-artwork"]["front_default"];
+          image.src = sprite;
+        }).catch(err => {
+          // Do something for an error here
+        });
       }
     </script>
   </head>
@@ -29,5 +27,9 @@
     <label for="SearchBox">What Pokemon would you like to search for?</label>
     <input type="text" id="SearchBox" name="SearchBox">
     <button type="button" onclick="LoadPokemon()">Search</button>
+
+    <div class="popup" onclick="myFunction()">Click me!
+      <span class="popuptext" id="myPopup">Popup text...</span>
+    </div>
   </body>
 </html>
