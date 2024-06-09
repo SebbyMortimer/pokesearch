@@ -13,6 +13,7 @@
       return response.json();
     }).then(data => {
       let sprite = data.sprites.other["official-artwork"]["front-default"];
+      console.log(sprite);
       image.src = sprite;
       console.log(data);
     }).catch(err => {
