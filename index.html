@@ -7,8 +7,13 @@
       function LoadPokemon() {
         const searchBox = document.getElementById("SearchBox");
         const image = document.getElementById("PokemonImage");
+
+        const nameNoPunc = searchBox.value.replace(/[^\w\s]/g, '');
+        const nameWithDashes = nameNoPunc.replace(/\s+/g, '-');
+        const finalName = nameWithDashes.toLowerCase();
+        
         var apiUrl = 'https://pokeapi.co/api/v2/pokemon/';
-        var pokeUrl = apiUrl.concat(searchBox.value);
+        var pokeUrl = apiUrl.concat(finalName);
         fetch(pokeUrl).then(response => {
           return response.json();
         }).then(data => {
