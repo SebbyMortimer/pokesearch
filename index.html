@@ -22,7 +22,14 @@
         }).catch(err => {
           window.alert(searchBox.value.concat(" is not a valid Pokemon."));
         });
-      }
+      };
+
+      document.onkeypress = function (e) {
+        e = e || window.event;
+          if (e.key == "Enter") {
+            console.log("Enter pressed");
+          }
+      };
     </script>
   </head>
 
